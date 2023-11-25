@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title List Customer></title>
+    </head>
+
+    <body>
+    <div id="wrapper">
+        <div id="header">
+            <h2>CRM - Customer Relationship Manager</h2>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div id="content">
+
+            <!--  add our html table here -->
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+
+                <!-- loop over and print our customers -->
+                <tr th:if="${customers.empty}">
+                    <td colspan="2"> No Books Available </td>
+                </tr>
+
+                <tr th:each="customer : ${customers}">
+                    <td><span th:text="${customer.firstName}"> Title </span></td>
+                    <td><span th:text="${customer.lastName}"> Title </span></td>
+                    <td><span th:text="${customer.email}"> Title </span></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    </body>
+</html>
